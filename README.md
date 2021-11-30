@@ -20,7 +20,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 - On page load render the dynamically created list of tasks in the dedicated placeholder. The list should appear in order of the index values for each task.
 - Create a style.css and set rules for the To Do List. CSS must be loaded by Webpack Style/CSS Loader. Your list should be a clone of the part of the minimalist project captured in the video below.
 
-![Video](https://www.youtube.com/watch?v=AcUd-_Yjjqg)
+[Video](https://www.youtube.com/watch?v=AcUd-_Yjjqg)
 
 ## Built With
 
@@ -32,13 +32,9 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 
 [Live Demo Link](https://hombre2014.github.io/ToDoList/)
 
-
 ## Getting Started
 
-**Simply open the link above.**
-
-
-To get a local copy up and running follow these simple example steps.
+- Simply open the link above.
 
 ### Prerequisites
 
@@ -46,21 +42,23 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-N/A
+- N/A
 
 ### Install
 
-N/A
+- N/A
 
 ### Usage
 
+- N/A
 
 ### Run tests
 
+- N/A
 
 ### Deployment
 
-Just open the live demo link in your browser.
+- Just open the live demo link in your browser.
 
 ## Author
 
