@@ -98,3 +98,7 @@ textarea {
 .view {
   width: 100%;
 }
+
+.fa-square {
+  cursor: pointer;
+}
