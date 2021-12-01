@@ -1,5 +1,3 @@
-import { lte } from "lodash";
-
 const toDoItems = [{
   description: 'This is the first thing to do',
   completed: false,
@@ -16,47 +14,13 @@ const toDoItems = [{
   index: 2,
 }];
 
-const toDoText = document.querySelectorAll('.todo');
-const labelFor = document.querySelectorAll('.label');
-
 const checkBtn = document.querySelectorAll('.fa-square');
 const checkMark = document.querySelectorAll('.fa-check');
-let btnId;
-let markId;
+const toDoText = document.querySelectorAll('.todo');
+const labelFor = document.querySelectorAll('.label');
 const localStorageArr = [];
-
-function showItems() {
-  const currentItems = getStatus();
-  console.log(currentItems);
-  if (currentItems !== null) {
-    for (let i = 0; i < currentItems.length; i += 1) {
-      if (currentItems[i].completed) {
-        checkMark[i].style.display = 'block';
-        checkMark[i].style.color = 'blue';
-        checkBtn[i].style.display = 'none';
-        toDoText[i].style.textDecoration = 'line-through';
-        toDoText[i].style.color = 'lightgrey';
-
-        toDoText[i].innerHTML = toDoItems[i].description;
-        toDoText[i].setAttribute('id', `${toDoItems[i].index}`);
-        labelFor[i].setAttribute('for', `${toDoItems[i].index}`);
-        toDoText[i].parentElement.previousElementSibling.previousElementSibling.setAttribute('data-id', `${toDoItems[i].index}`);
-        toDoText[i].parentElement.previousElementSibling.setAttribute('data-id', `${toDoItems[i].index}`);
-      } else {
-        checkMark[i].style.display = 'none';
-        checkBtn[i].style.display = 'block';
-        toDoText[i].style.textDecoration = 'none';
-        toDoText[i].style.color = 'black';
-
-        toDoText[i].innerHTML = toDoItems[i].description;
-        toDoText[i].setAttribute('id', `${toDoItems[i].index}`);
-        labelFor[i].setAttribute('for', `${toDoItems[i].index}`);
-        toDoText[i].parentElement.previousElementSibling.previousElementSibling.setAttribute('data-id', `${toDoItems[i].index}`);
-        toDoText[i].parentElement.previousElementSibling.setAttribute('data-id', `${toDoItems[i].index}`);
-      }
-    }
-  }
-}
+let markId;
+let btnId;
 
 function storeStatus() {
   for (let i = 0; i < toDoItems.length; i += 1) {
@@ -78,13 +42,41 @@ function getStatus() {
   return toDoItems;
 }
 
-// Replace toDoItems with localStorageArr below
+function context(i) {
+  toDoText[i].innerHTML = toDoItems[i].description;
+  toDoText[i].setAttribute('id', `${toDoItems[i].index}`);
+  labelFor[i].setAttribute('for', `${toDoItems[i].index}`);
+  toDoText[i].parentElement.previousElementSibling.previousElementSibling.setAttribute('data-id', `${toDoItems[i].index}`);
+  toDoText[i].parentElement.previousElementSibling.setAttribute('data-id', `${toDoItems[i].index}`);
+}
+
+function showItems() {
+  const currentItems = getStatus();
+  if (currentItems !== null) {
+    for (let i = 0; i < currentItems.length; i += 1) {
+      if (currentItems[i].completed) {
+        checkMark[i].style.display = 'block';
+        checkMark[i].style.color = 'blue';
+        checkBtn[i].style.display = 'none';
+        toDoText[i].style.textDecoration = 'line-through';
+        toDoText[i].style.color = 'lightgrey';
+        context(i);
+      } else {
+        checkMark[i].style.display = 'none';
+        checkBtn[i].style.display = 'block';
+        toDoText[i].style.textDecoration = 'none';
+        toDoText[i].style.color = 'black';
+        context(i);
+      }
+    }
+  }
+}
+
 function checkButton() {
   checkBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       btnId = btn.getAttribute('data-id');
       toDoItems[btnId].completed = true;
-      console.log("Button.completed is changed: ", toDoItems[btnId].completed, "ButtonID: ", btnId);
       storeStatus();
       showItems();
     });
@@ -93,13 +85,10 @@ function checkButton() {
     mark.addEventListener('click', () => {
       markId = mark.getAttribute('data-id');
       toDoItems[markId].completed = false;
-      console.log("Mark.completed is changed: ", toDoItems[markId].completed, "ButtonID: ", markId);
       storeStatus();
       showItems();
     });
   });
 }
 
-export {
-  checkButton, storeStatus, getStatus, toDoItems,
-};
+export { checkButton, showItems };
