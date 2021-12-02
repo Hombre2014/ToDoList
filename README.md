@@ -38,7 +38,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 
 ## Live Demo
 
-[Live Demo Link](https://hombre2014.github.io/ToDoList/)
+- Not deployed yet.
 
 ## Getting Started
 

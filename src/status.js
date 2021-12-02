@@ -1,4 +1,4 @@
-const toDoItems = [{
+const toDoItems = JSON.parse(localStorage.getItem('toDoList')) || [{
   description: 'This is the first thing to do',
   completed: false,
   index: 0,
@@ -56,7 +56,7 @@ function showItems() {
     for (let i = 0; i < currentItems.length; i += 1) {
       if (currentItems[i].completed) {
         checkMark[i].style.display = 'block';
-        checkMark[i].style.color = 'blue';
+        checkMark[i].style.color = '#36B0E9';
         checkBtn[i].style.display = 'none';
         toDoText[i].style.textDecoration = 'line-through';
         toDoText[i].style.color = 'lightgrey';
@@ -91,4 +91,4 @@ function checkButton() {
   });
 }
 
-export { checkButton, showItems };
+export { checkButton, showItems, storeStatus };
