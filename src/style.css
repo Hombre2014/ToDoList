@@ -98,3 +98,11 @@ textarea {
 .view {
   width: 100%;
 }
+
+.fa-square {
+  cursor: pointer;
+}
+
+.fa-level-down-alt {
+  transform: rotate(90deg);
+}
