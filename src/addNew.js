@@ -1,12 +1,15 @@
-import {
-  storeStatus, toDoItems, showItems, checkButton, getStatus,
-} from './status.js';
+import { toDoItems, showItems, checkButton } from './status.js';
 
-const newToDoItem = {
-  description: '',
-  completed: false,
-  index: 0,
-};
+// const newToDoItem = {
+//   description: '',
+//   completed: false,
+//   index: 0,
+// };
+function ToDoItem(description, completed = false, index = 0) {
+  this.description = description;
+  this.completed = completed;
+  this.index = index;
+}
 
 const fullList = document.querySelector('.full-list');
 const enter = document.querySelector('.fa-level-down-alt');
@@ -42,42 +45,51 @@ function context() {
   fullList.appendChild(toDoDiv);
 }
 
+function displayStored() {
+  for (let i = 0; i < toDoItems.length; i += 1) {
+    context();
+    // document.getElementById(`${i}`).innerText = toDoItems[i].description;
+    toDoText = document.querySelectorAll('.todo');
+    toDoText[i].innerText = toDoItems[i].description;
+    showItems();
+    checkButton();
+  }
+  numberIndex = toDoItems.length;
+}
+
 function addNewItem() {
   newItem.addEventListener('focusout', () => {
+    console.log('We\'re adding an element');
     itemText = newItem.value;
     hitEnter();
-    if (itemText !== '' && numberIndex === 0) {
-      context();
-      toDoText = document.querySelectorAll('.todo');
-      toDoText[numberIndex].innerText = itemText;
-      newToDoItem.description = itemText;
-      newToDoItem.completed = false;
-      newToDoItem.index = numberIndex;
-      toDoItems.push(newToDoItem);
-      storeStatus(numberIndex);
-      toDoDivsAll = document.querySelectorAll('.todo-item');
-      numberIndex = toDoDivsAll.length;
-      showItems();
-      checkButton();
-    } else if (itemText !== '' && numberIndex !== 0) {
-      context();
-      toDoText = document.querySelectorAll('.todo');
-      // console.log("ToDoItems.before: ", toDoItems);
-      toDoText[numberIndex].innerHTML = itemText;
-      // console.log("NumberIndex: ", numberIndex);
-      newToDoItem.description = itemText;
-      // console.log("newToDoItem.description: ", newToDoItem.description);
-      newToDoItem.completed = false;
-      newToDoItem.index = numberIndex;
-      toDoItems.push(newToDoItem);
-      // console.log("ToDoItems.push: ", toDoItems);
-      storeStatus(numberIndex);
-      toDoDivsAll = document.querySelectorAll('.todo-item');
-      numberIndex = toDoDivsAll.length;
-      showItems();
-      checkButton();
-    }
+    // if (itemText !== '' && numberIndex === 0) {
+    context();
+    toDoText = document.querySelectorAll('.todo');
+    toDoText[numberIndex].innerText = itemText;
+    toDoItems.push(new ToDoItem(
+      itemText, false, numberIndex,
+    ));
+    localStorage.setItem('toDoList', JSON.stringify(toDoItems));
+    toDoDivsAll = document.querySelectorAll('.todo-item');
+    numberIndex = toDoDivsAll.length;
+
+    showItems();
+    checkButton();
+    // } else if (itemText !== '' && numberIndex !== 0) {
+    //   context();
+    //   toDoText = document.querySelectorAll('.todo');
+    //   toDoText[numberIndex].innerHTML = itemText;
+    //   toDoItems.push(new ToDoItem(
+    //     itemText, false, numberIndex,
+    //   ));
+    //   // console.log("ToDoItems.push: ", toDoItems);
+    //   localStorage.setItem('toDoList', JSON.stringify(toDoItems));
+    //   toDoDivsAll = document.querySelectorAll('.todo-item');
+    //   numberIndex = toDoDivsAll.length;
+    //   showItems();
+    //   checkButton();
+    // }
   });
 }
 
-export { addNewItem, context };
+export { addNewItem, context, displayStored };

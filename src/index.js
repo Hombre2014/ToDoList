@@ -1,9 +1,11 @@
 import './style.css';
-import { checkButton, showItems, storeStatus } from './status.js';
-import { addNewItem } from './addNew.js';
+import { getStatus } from './status.js';
+import { addNewItem, displayStored } from './addNew.js';
 
 function main() {
-  showItems();
+  // showItems();
+  getStatus();
+  displayStored();
   addNewItem();
   // storeStatus();
   // checkButton();
