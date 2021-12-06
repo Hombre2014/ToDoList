@@ -1,4 +1,5 @@
 import { toDoItems, showItems, checkButton } from './status.js';
+import { editToDo } from './removeItem.js';
 
 function ToDoItem(description, completed = false, index = 0) {
   this.description = description;
@@ -61,13 +62,12 @@ function addNewItem() {
       context();
       toDoText = document.querySelectorAll('.todo');
       toDoText[numberIndex].innerText = itemText;
-      toDoItems.push(new ToDoItem(
-        itemText, false, numberIndex,
-      ));
+      toDoItems.push(new ToDoItem(itemText, false, numberIndex));
       localStorage.setItem('toDoList', JSON.stringify(toDoItems));
       toDoDivsAll = document.querySelectorAll('.todo-item');
       numberIndex = toDoDivsAll.length;
       showItems();
+      editToDo();
       checkButton();
     }
   });
