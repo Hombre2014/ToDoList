@@ -16,10 +16,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.item-container {
-  padding: 1rem 1rem 0 1rem;
-}
-
 .today,
 .add-new,
 .todo-item {
@@ -71,6 +67,10 @@ body {
   width: 90%;
 }
 
+.no-outline {
+  padding-left: 1rem;
+}
+
 .no-outline:focus {
   outline: none;
 }
@@ -86,7 +86,7 @@ textarea {
   outline: none;
   border: none;
   resize: none;
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
   line-height: 1.5rem;
   word-wrap: break-word;
@@ -99,10 +99,30 @@ textarea {
   width: 100%;
 }
 
-.fa-square {
+.fa-square,
+.fa-check {
   cursor: pointer;
+  padding-left: 1rem;
 }
 
 .fa-level-down-alt {
   transform: rotate(90deg);
+  position: absolute;
+  right: calc(30% + 1rem);
+}
+
+.fa-sync,
+.fa-ellipsis-v,
+.fa-trash-alt {
+  padding-right: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+.heading {
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
 }

@@ -24,11 +24,11 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 
 ## Interactive list (step 2):
 
-- Add a new JavaScript files and import it as a module:
-    - it will contain methods related to the status updates (`completed: true/false`)
-- Add event listener to the checkbox (`change`).
-- Update items object's value for (`completed`) key upon user actions.
-- Store the updated array of items in local storage, so the user gets the correct list values after the page reloads.
+- [x] Add a new JavaScript files and import it as a module:
+    - [x] it will contain methods related to the status updates (`completed: true/false`)
+- [x] Add event listener to the checkbox (`change`).
+- [x] Update items object's value for (`completed`) key upon user actions.
+- [x] Store the updated array of items in local storage, so the user gets the correct list values after the page reloads.
 
 ## Built With
 
