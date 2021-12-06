@@ -54,19 +54,21 @@ function displayStored() {
 function addNewItem() {
   newItem.addEventListener('focusout', () => {
     itemText = newItem.value;
-    hitEnter();
-    context();
-    toDoText = document.querySelectorAll('.todo');
-    toDoText[numberIndex].innerText = itemText;
-    toDoItems.push(new ToDoItem(
-      itemText, false, numberIndex,
-    ));
-    localStorage.setItem('toDoList', JSON.stringify(toDoItems));
-    toDoDivsAll = document.querySelectorAll('.todo-item');
-    numberIndex = toDoDivsAll.length;
-
-    showItems();
-    checkButton();
+    if (itemText !== '') {
+      newItem.value = '';
+      hitEnter();
+      context();
+      toDoText = document.querySelectorAll('.todo');
+      toDoText[numberIndex].innerText = itemText;
+      toDoItems.push(new ToDoItem(
+        itemText, false, numberIndex,
+      ));
+      localStorage.setItem('toDoList', JSON.stringify(toDoItems));
+      toDoDivsAll = document.querySelectorAll('.todo-item');
+      numberIndex = toDoDivsAll.length;
+      showItems();
+      checkButton();
+    }
   });
 }
 
