@@ -35,7 +35,8 @@ function context() {
       <textarea class='todo' title='description' maxlength='128' id='${numberIndex}'></textarea>
     </div>
   </div>
-  <i class='fas fa-ellipsis-v'></i>
+  <i class='fas fa-ellipsis-v' data-id='${numberIndex}'></i>
+  <i class="far fa-trash-alt hide" data-id='${numberIndex}'></i>
   `;
   fullList.appendChild(toDoDiv);
 }
