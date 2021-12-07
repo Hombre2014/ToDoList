@@ -83,7 +83,9 @@ function editToDo() {
       // Removed delete function
 
       // Toggle focus and out of focus field
-      // allDivs[fieldId].addEventListener('focusout', () => {
+      // allDivs[fieldId].addEventListener('focusout', (e) => {
+      //   console.log("Related target: ", e.relatedTarget);
+      //   // if (e.relatedTarget?.classList.contains('fa-trash-alt')) return;
       //   allDivs[fieldId].style.backgroundColor = 'white';
       //   textFields[fieldId].style.backgroundColor = 'white';
       //   dotsIcon[fieldId].classList.remove('hide');
