@@ -63,8 +63,9 @@ To get a local copy up and running follow these simple example steps.
 
 - Clone the repository using "git clone git@github.com:Hombre2014/ToDoList.git"
 - Change directory into the project folder
-- Run npm install
-- Start the project using LiveServer extension or open project in a browser
+- Run `npm install`
+- Run `npm start`
+- A new browser will open automatically with application loaded
 
 ### Run tests
 
