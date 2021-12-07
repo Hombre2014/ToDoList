@@ -8,6 +8,7 @@ let btnId;
 
 function getStatus() {
   if (localStorage.length === 0) {
+    localStorage.clear();
     console.log('Local storage is empty');
   } else {
     const storedToDoList = JSON.parse(localStorage.getItem('toDoList'));

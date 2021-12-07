@@ -42,17 +42,6 @@ function context() {
   fullList.appendChild(toDoDiv);
 }
 
-function displayStored() {
-  for (let i = 0; i < toDoItems.length; i += 1) {
-    context();
-    toDoText = document.querySelectorAll('.todo');
-    toDoText[i].innerText = toDoItems[i].description;
-    showItems();
-    checkButton();
-  }
-  numberIndex = toDoItems.length;
-}
-
 function addNewItem() {
   newItem.addEventListener('focusout', () => {
     itemText = newItem.value;
@@ -67,10 +56,22 @@ function addNewItem() {
       toDoDivsAll = document.querySelectorAll('.todo-item');
       numberIndex = toDoDivsAll.length;
       showItems();
-      editToDo();
       checkButton();
+      editToDo();
     }
   });
+}
+
+function displayStored() {
+  for (let i = 0; i < toDoItems.length; i += 1) {
+    context();
+    toDoText = document.querySelectorAll('.todo');
+    toDoText[i].innerText = toDoItems[i].description;
+    showItems();
+    checkButton();
+  }
+  addNewItem();
+  numberIndex = toDoItems.length;
 }
 
 export { addNewItem, context, displayStored };
