@@ -72,7 +72,6 @@ function editToDo() {
         showItems();
         fieldId = undefined;
       });
-
       // Edit todo item
       textFields[fieldId].addEventListener('change', () => {
         const editedString = textFields[fieldId].value;
