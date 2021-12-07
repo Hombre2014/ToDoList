@@ -30,35 +30,42 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 
 ## Live Demo
 
-[Live Demo Link](https://hombre2014.github.io/ToDoList/)
+- Not deployed yet.
 
 ## Getting Started
 
-- Simply open the link above.
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
 - Internet connection and browser
+- A text editor(preferably Visual Studio Code)
+- Browser
 
 ### Setup
 
-- N/A
+- For detail description of how to get started with webpack, please, look at: [webpack](https://webpack.js.org/guides/getting-started/)
 
 ### Install
 
-- N/A
+- [Git](https://git-scm.com/downloads)
+- [Node](https://nodejs.org/en/download/)
 
 ### Usage
 
-- N/A
+- Clone the repository using "git clone git@github.com:Hombre2014/ToDoList.git"
+- Change directory into the project folder
+- Run npm install
+- Run npm start
+- A new browser will open automatically with application loaded
 
 ### Run tests
 
-- N/A
+- Passed Lighthouse, webhint, Stylelint and ESLint tests
 
 ### Deployment
 
-- Just open the live demo link in your browser.
+- All the files necessary for deployment are in the /dist folder
 
 ## Author
 
@@ -83,4 +90,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./license.md) licensed.
