@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Yuriy Chamkoriyski To Do List project
+# Yuriy Chamkoriyski's To Do List project
 
 > Second Javascript project from Module 2 at Microverse
 
@@ -11,7 +11,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 ## List structure (step 1):
 
 - [x] Set up a new project with webpack that is based on the webpack exercise you have already completed.
-- [x] Create an index.html file and write your HTML markup here. Create an empty To Do List placeholder (<div> or <ul> element). The index.html file must be set as a template using the HTML Webpack Plugin.
+- [x] Create an index.html file and write your HTML markup here. Create an empty To Do List placeholder (`<div>` or `<ul>`element). The index.html file must be set as a template using the HTML Webpack Plugin.
 - [x] Create an index.js file and set an array of some simple to do tasks (array of objects). Each task object should contain three keys:
   - [x] i.   description [string].
   - [x] ii.  completed [bool].
@@ -25,10 +25,22 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 ## Interactive list (step 2):
 
 - [x] Add a new JavaScript files and import it as a module:
-    - [x] it will contain methods related to the status updates (`completed: true/false`)
+  - [x] it will contain methods related to the status updates (`completed`: `true` / `false`).
 - [x] Add event listener to the checkbox (`change`).
-- [x] Update items object's value for (`completed`) key upon user actions.
+- [x] Update items object's value for `completed` key upon user actions.
 - [x] Store the updated array of items in local storage, so the user gets the correct list values after the page reloads.
+
+## Add & remove functions (step 3):
+
+- Remove all hardcoded items from the tasks array.
+- Create a new JavaScript file for the new functionality.
+- Implement a function for adding a new task (add a new element to the array).
+- Implement a function for editing task descriptions.
+- Implement a function for deleting a task (remove an element from the array).
+- Implement a function for the "Clear all completed" button (use `filter()` method).
+- By default new tasks should have the property `completed` set to `false` and the property index set to the value of the new array length (i.e. if you're adding a 5th task to the list, the index of that task should equal to 5).
+- Deleting a task should update all remaining items' indexes, so they represent the current list order and are unique.
+- All changes to the To Do List should be saved in local storage.
 
 ## Built With
 
@@ -47,7 +59,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - Internet connection and browser
-- A text editor(preferably Visual Studio Code)
+- A text editor preferably ([Visual Studio Code](https://code.visualstudio.com/))
 - Browser
 
 ### Setup
@@ -61,10 +73,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
-- Clone the repository using "git clone git@github.com:Hombre2014/ToDoList.git"
-- Change directory into the project folder
-- Run npm install
-- Run npm start
+- Clone the repository using "`git clone git@github.com:Hombre2014/ToDoList.git`"
+- Change directory into the project folder `cd todolist`
+- Run `npm install`
+- Run `npm start`
 - A new browser will open automatically with application loaded
 
 ### Run tests
@@ -73,7 +85,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-- All the files necessary for deployment are in the /dist folder
+- All the files necessary for deployment are in the `/dist` folder
 
 ## Author
 
@@ -95,6 +107,13 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+This is a solo project, but I want to thanks my partners at ![](https://img.shields.io/badge/Microverse-blueviolet) for making it better. 
+
+- Thanks to my learning and coding partners for their inputs and code reviews: [SadiQ Habil](https://github.com/kingqabil), [Anuar Shaidenov](https://github.com/anuarshaidenov), [Mong'are](https://github.com/Mosams) and [abdessalem1998](https://github.com/abdessalem1998).
+
+- Thanks [Anselem Odimegwu](https://github.com/AnselemOdims) for helping me troubleshooting some issues.
+
+- Special thanks to [Bohdan Shcherbak](https://github.com/akucintavalent) for offering his help and colaboration during third phase of the project.
 
 ## 📝 License
 
