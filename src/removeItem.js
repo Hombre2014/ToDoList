@@ -49,30 +49,43 @@ function sortToDo(fieldId) {
 //   showItems();
 // }
 
+// function toggleField(fieldId) {
+//   // Toggle focus/out of focus of current Div
+//   allDivs[fieldId].addEventListener('click', () => {
+//     allDivs[fieldId].style.backgroundColor = 'lightyellow';
+//     textFields[fieldId].style.backgroundColor = 'lightyellow';
+//     dotsIcon[fieldId].classList.add('hide');
+//     trashIcon[fieldId].classList.remove('hide');
+//   });
+//   allDivs[fieldId].addEventListener('focusout', () => {
+//     allDivs[fieldId].style.backgroundColor = 'white';
+//     textFields[fieldId].style.backgroundColor = 'white';
+//     dotsIcon[fieldId].classList.remove('hide');
+//     trashIcon[fieldId].classList.add('hide');
+//   });
+// }
+
 function editToDo() {
   getCurrent();
   // Select a todo item field
   textFields.forEach((field) => {
-    field.addEventListener('click', () => {
+    field.addEventListener('click', (e) => {
+      console.log(e.relatedTarget);
       fieldId = Number(field.getAttribute('id'));
+      // toggleField(fieldId);
       allDivs[fieldId].style.backgroundColor = 'lightyellow';
       textFields[fieldId].style.backgroundColor = 'lightyellow';
       dotsIcon[fieldId].classList.add('hide');
-      trashIcon[fieldId].classList.remove('hide');
-      // Toggle focus and out of focus field
-      textFields[fieldId].addEventListener('focusout', () => {
-        allDivs[fieldId].style.backgroundColor = 'white';
-        textFields[fieldId].style.backgroundColor = 'white';
-        dotsIcon[fieldId].classList.remove('hide');
-        trashIcon[fieldId].classList.add('hide');
-      });
-      // Enabling trash icon and delete function
+      trashIcon[fieldId].classList.remove('hide');  
+      // Delete function
       trashIcon[fieldId].addEventListener('click', () => {
         const storedItems = getStatus();
+        getCurrent();
+        console.log("All Divs ", allDivs);
+        console.log("FiledID: ", fieldId);
         allDivs[fieldId].remove();
         getCurrent();
         storedItems.splice(fieldId, 1);
-        console.log("StoredItems: ", storedItems);
         localStorage.setItem('toDoList', JSON.stringify(storedItems));
         getStatus();
         sortToDo(fieldId);
@@ -86,6 +99,13 @@ function editToDo() {
         localStorage.setItem('toDoList', JSON.stringify(toDoItems));
         getStatus();
       });
+      // textFields[fieldId].addEventListener('focusout', () => {
+      //   fieldId = Number(field.getAttribute('id'));
+      //   allDivs[fieldId].style.backgroundColor = 'white';
+      //   textFields[fieldId].style.backgroundColor = 'white';
+      //   dotsIcon[fieldId].classList.remove('hide');
+      //   trashIcon[fieldId].classList.add('hide');
+      // });
     });
   });
   getCurrent();

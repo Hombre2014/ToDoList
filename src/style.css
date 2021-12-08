@@ -58,6 +58,7 @@ body {
 #clear-text {
   text-decoration: none;
   color: rgb(24, 24, 24);
+  padding: 0.5rem;
 }
 
 #new-item {
@@ -68,7 +69,7 @@ body {
 }
 
 .no-outline {
-  padding-left: 1rem;
+  padding: 0 1rem;
 }
 
 .no-outline:focus {
@@ -97,24 +98,35 @@ textarea {
 
 .view {
   width: 100%;
+  margin: 0 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .fa-square,
 .fa-check {
   cursor: pointer;
-  padding-left: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
 }
 
 .fa-level-down-alt {
   transform: rotate(90deg);
   position: absolute;
-  right: calc(30% + 1rem);
+  right: calc(30%);
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .fa-sync,
 .fa-ellipsis-v,
 .fa-trash-alt {
-  padding-right: 1rem;
+  padding: 1rem;
+}
+
+.fa-trash-alt:hover {
+  color: rgb(212, 58, 58);
+  transform: scale(1.25);
+  transition: all 0.2s;
+  cursor: pointer;
 }
 
 .hide {
