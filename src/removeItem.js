@@ -59,6 +59,13 @@ function editToDo() {
       textFields[fieldId].style.backgroundColor = 'lightyellow';
       dotsIcon[fieldId].classList.add('hide');
       trashIcon[fieldId].classList.remove('hide');
+      // Toggle focus and out of focus field
+      textFields[fieldId].addEventListener('focusout', () => {
+        allDivs[fieldId].style.backgroundColor = 'white';
+        textFields[fieldId].style.backgroundColor = 'white';
+        dotsIcon[fieldId].classList.remove('hide');
+        trashIcon[fieldId].classList.add('hide');
+      });
       // Enabling trash icon and delete function
       trashIcon[fieldId].addEventListener('click', () => {
         const storedItems = getStatus();
@@ -79,18 +86,6 @@ function editToDo() {
         localStorage.setItem('toDoList', JSON.stringify(toDoItems));
         getStatus();
       });
-
-      // Removed delete function
-
-      // Toggle focus and out of focus field
-      // allDivs[fieldId].addEventListener('focusout', (e) => {
-      //   console.log("Related target: ", e.relatedTarget);
-      //   // if (e.relatedTarget?.classList.contains('fa-trash-alt')) return;
-      //   allDivs[fieldId].style.backgroundColor = 'white';
-      //   textFields[fieldId].style.backgroundColor = 'white';
-      //   dotsIcon[fieldId].classList.remove('hide');
-      //   trashIcon[fieldId].classList.add('hide');
-      // });
     });
   });
   getCurrent();
