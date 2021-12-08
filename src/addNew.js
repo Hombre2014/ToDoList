@@ -19,6 +19,11 @@ function hitEnter() {
   enter.addEventListener('click', () => {
     newItem.value = '';
   });
+  // newItem.addEventListener('keyup', ({key}) => {
+  //   if (key === 'Enter') {
+  //     itemText = newItem.value;
+  //   }
+  // });
 }
 
 function context() {
@@ -43,23 +48,30 @@ function context() {
 }
 
 function addNewItem() {
-  newItem.addEventListener('focusout', () => {
+  const onfocusout = () => {
     itemText = newItem.value;
     if (itemText !== '') {
       newItem.value = '';
       hitEnter();
       context();
       toDoText = document.querySelectorAll('.todo');
-      toDoText[numberIndex].innerText = itemText;
+      const textArea = toDoText[numberIndex];
+      textArea.innerText = itemText;
       toDoItems.push(new ToDoItem(itemText, false, numberIndex));
       localStorage.setItem('toDoList', JSON.stringify(toDoItems));
       toDoDivsAll = document.querySelectorAll('.todo-item');
       numberIndex = toDoDivsAll.length;
       showItems();
       checkButton();
-      editToDo();
+      editToDo([textArea]);
+    }
+  };
+  newItem.addEventListener('keyup', ({ key }) => {
+    if (key === 'Enter') {
+      onfocusout();
     }
   });
+  newItem.addEventListener('focusout', onfocusout);
 }
 
 function displayStored() {

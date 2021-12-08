@@ -37,78 +37,50 @@ function sortToDo(fieldId) {
   getStatus();
 }
 
-// function deleteToDo(fieldId) {
-//   const storedItems = getStatus();
-//   allDivs[fieldId].remove();
-//   getCurrent();
-//   storedItems.splice(fieldId, 1);
-//   console.log("StoredItems: ", storedItems);
-//   localStorage.setItem('toDoList', JSON.stringify(storedItems));
-//   getStatus();
-//   sortToDo(fieldId);
-//   showItems();
-// }
-
-// function toggleField(fieldId) {
-//   // Toggle focus/out of focus of current Div
-//   allDivs[fieldId].addEventListener('click', () => {
-//     allDivs[fieldId].style.backgroundColor = 'lightyellow';
-//     textFields[fieldId].style.backgroundColor = 'lightyellow';
-//     dotsIcon[fieldId].classList.add('hide');
-//     trashIcon[fieldId].classList.remove('hide');
-//   });
-//   allDivs[fieldId].addEventListener('focusout', () => {
-//     allDivs[fieldId].style.backgroundColor = 'white';
-//     textFields[fieldId].style.backgroundColor = 'white';
-//     dotsIcon[fieldId].classList.remove('hide');
-//     trashIcon[fieldId].classList.add('hide');
-//   });
-// }
-
-function editToDo() {
-  getCurrent();
+function editToDo(textFieldsLocal) {
+  // getCurrent();
+  textFields = document.querySelectorAll('.todo');
+  if (textFieldsLocal === undefined) {
+    textFieldsLocal = textFields;
+  }
   // Select a todo item field
-  textFields.forEach((field) => {
-    field.addEventListener('click', (e) => {
-      console.log(e.relatedTarget);
-      fieldId = Number(field.getAttribute('id'));
-      // toggleField(fieldId);
-      allDivs[fieldId].style.backgroundColor = 'lightyellow';
-      textFields[fieldId].style.backgroundColor = 'lightyellow';
-      dotsIcon[fieldId].classList.add('hide');
-      trashIcon[fieldId].classList.remove('hide');  
+  textFieldsLocal.forEach((field) => {
+    field.addEventListener('click', () => {
+      fieldId = +field.getAttribute('id');
+      const listItem = field.parentNode.parentNode.parentNode;
+      const dotsIcon = listItem.querySelector('.fa-ellipsis-v');
+      const trashIcon = listItem.querySelector('.fa-trash-alt');
+      listItem.style.backgroundColor = 'lightyellow';
+      field.style.backgroundColor = 'lightyellow';
+      dotsIcon.classList.add('hide');
+      trashIcon.classList.remove('hide');
       // Delete function
-      trashIcon[fieldId].addEventListener('click', () => {
+      trashIcon.addEventListener('mousedown', () => {
         const storedItems = getStatus();
-        getCurrent();
-        console.log("All Divs ", allDivs);
-        console.log("FiledID: ", fieldId);
-        allDivs[fieldId].remove();
-        getCurrent();
+        listItem.remove();
         storedItems.splice(fieldId, 1);
         localStorage.setItem('toDoList', JSON.stringify(storedItems));
-        getStatus();
+        // getStatus();
         sortToDo(fieldId);
         showItems();
         fieldId = undefined;
       });
       // Edit todo item
-      textFields[fieldId].addEventListener('change', () => {
-        const editedString = textFields[fieldId].value;
-        toDoItems[fieldId].description = editedString;
-        localStorage.setItem('toDoList', JSON.stringify(toDoItems));
-        getStatus();
+      field.addEventListener('keyup', () => {
+        const storedItems = getStatus();
+        const editedString = listItem.querySelector('.todo').value;
+        storedItems[fieldId].description = editedString;
+        localStorage.setItem('toDoList', JSON.stringify(storedItems));
+        // getStatus();
       });
-      // textFields[fieldId].addEventListener('focusout', () => {
-      //   fieldId = Number(field.getAttribute('id'));
-      //   allDivs[fieldId].style.backgroundColor = 'white';
-      //   textFields[fieldId].style.backgroundColor = 'white';
-      //   dotsIcon[fieldId].classList.remove('hide');
-      //   trashIcon[fieldId].classList.add('hide');
-      // });
+      field.addEventListener('focusout', () => {
+        listItem.style.backgroundColor = 'white';
+        field.style.backgroundColor = 'white';
+        dotsIcon.classList.remove('hide');
+        trashIcon.classList.add('hide');
+      });
     });
   });
-  getCurrent();
 }
 
 function clearCompleted() {
