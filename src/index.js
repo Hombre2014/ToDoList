@@ -1,10 +1,13 @@
 import './style.css';
-import { checkButton, showItems, storeStatus } from './status.js';
+import { getStatus } from './status.js';
+import { displayStored } from './addNew.js';
+import { editToDo, clearCompleted } from './removeItem.js';
 
 function main() {
-  storeStatus();
-  showItems();
-  checkButton();
+  getStatus();
+  displayStored();
+  editToDo();
+  clearCompleted();
 }
 
 main();
