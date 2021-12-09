@@ -11,7 +11,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 ## List structure (step 1):
 
 - [x] Set up a new project with webpack that is based on the webpack exercise you have already completed.
-- [x] Create an index.html file and write your HTML markup here. Create an empty To Do List placeholder (`<div>` or `<ul>`element). The index.html file must be set as a template using the HTML Webpack Plugin.
+- [x] Create an index.html file and write your HTML markup here. Create an empty To Do List placeholder (`<div>` or `<ul>` element). The index.html file must be set as a template using the HTML Webpack Plugin.
 - [x] Create an index.js file and set an array of some simple to do tasks (array of objects). Each task object should contain three keys:
   - [x] i.   description [string].
   - [x] ii.  completed [bool].
