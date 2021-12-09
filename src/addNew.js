@@ -7,23 +7,18 @@ function ToDoItem(description, completed = false, index = 0) {
   this.index = index;
 }
 
-const fullList = document.querySelector('.full-list');
 const enter = document.querySelector('.fa-level-down-alt');
-const newItem = document.getElementById('new-item');
 let toDoDivsAll = document.querySelectorAll('.todo-item');
-let numberIndex = 0;
+const fullList = document.querySelector('.full-list');
+const newItem = document.getElementById('new-item');
 let toDoText = document.querySelectorAll('.todo');
+let numberIndex = 0;
 let itemText = '';
 
 function hitEnter() {
   enter.addEventListener('click', () => {
     newItem.value = '';
   });
-  // newItem.addEventListener('keyup', ({key}) => {
-  //   if (key === 'Enter') {
-  //     itemText = newItem.value;
-  //   }
-  // });
 }
 
 function context() {

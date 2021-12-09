@@ -61,9 +61,15 @@ body {
   padding: 0.5rem;
 }
 
+#clear-text:hover {
+  color: #36b0e9;
+  transform: scale(1.4);
+  transition: 0.4s;
+}
+
 #new-item {
   font-size: 1rem;
-  line-height: 1rem;
+  line-height: 3rem;
   border: none;
   width: 90%;
 }
@@ -120,6 +126,13 @@ textarea {
 .fa-ellipsis-v,
 .fa-trash-alt {
   padding: 1rem;
+}
+
+.fa-sync:hover {
+  color: rgb(105, 223, 105);
+  transition: 0.4s;
+  transform: rotate(360deg);
+  cursor: pointer;
 }
 
 .fa-trash-alt:hover {

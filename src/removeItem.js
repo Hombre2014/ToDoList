@@ -1,5 +1,4 @@
-// import { displayStored } from './addNew.js';
-import { getStatus, toDoItems, showItems } from './status.js';
+import { getStatus, showItems } from './status.js';
 
 let textFields = document.querySelectorAll('.todo');
 let dotsIcon = document.querySelectorAll('.fa-ellipsis-v');
@@ -38,7 +37,6 @@ function sortToDo(fieldId) {
 }
 
 function editToDo(textFieldsLocal) {
-  // getCurrent();
   textFields = document.querySelectorAll('.todo');
   if (textFieldsLocal === undefined) {
     textFieldsLocal = textFields;
@@ -60,7 +58,6 @@ function editToDo(textFieldsLocal) {
         listItem.remove();
         storedItems.splice(fieldId, 1);
         localStorage.setItem('toDoList', JSON.stringify(storedItems));
-        // getStatus();
         sortToDo(fieldId);
         showItems();
         fieldId = undefined;
@@ -71,8 +68,8 @@ function editToDo(textFieldsLocal) {
         const editedString = listItem.querySelector('.todo').value;
         storedItems[fieldId].description = editedString;
         localStorage.setItem('toDoList', JSON.stringify(storedItems));
-        // getStatus();
       });
+      // Toggle the background and icons on focus
       field.addEventListener('focusout', () => {
         listItem.style.backgroundColor = 'white';
         field.style.backgroundColor = 'white';

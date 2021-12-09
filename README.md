@@ -54,7 +54,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
 - Clone the repository using "`git clone git@github.com:Hombre2014/ToDoList.git`"
-- Change directory into the project folder `cd todolist`
+- Change directory into the project folder `cd ToDoList`
 - Run `npm install`
 - Run `npm start`
 - A new browser will open automatically with application loaded
@@ -109,11 +109,9 @@ Give a ⭐️ if you like this project!
 
 This is a solo project, but I want to thanks my partners at ![](https://img.shields.io/badge/Microverse-blueviolet) for making it better. 
 
-- Thanks to my learning and coding partners for their inputs and code reviews: [SadiQ Habil](https://github.com/kingqabil), [Anuar Shaidenov](https://github.com/anuarshaidenov), [Mong'are](https://github.com/Mosams) and [abdessalem1998](https://github.com/abdessalem1998).
-
+- Special thanks to [Bohdan Shcherbak](https://github.com/akucintavalent) for offering his help and collaboration during third phase of the project.
+- Thanks to my learning and coding partners for their inputs and code reviews: [SadiQ Habil](https://github.com/kingqabil), especially [Anuar Shaidenov](https://github.com/anuarshaidenov) for his support and dedication, [Mong'are](https://github.com/Mosams) and [abdessalem1998](https://github.com/abdessalem1998).
 - Thanks [Anselem Odimegwu](https://github.com/AnselemOdims) for helping me troubleshooting some issues.
-
-- Special thanks to [Bohdan Shcherbak](https://github.com/akucintavalent) for offering his help and colaboration during third phase of the project.
 
 ## 📝 License
 
