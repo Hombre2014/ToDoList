@@ -50,7 +50,7 @@ In this project, you will build a simple HTML list of To Do tasks. The list will
 
 ## Live Demo
 
-- [Live Demo](https://hombre2014.github.io/ToDoList/)
+- [Live Demo](https://hombre2014.github.io/ToDoList/dist/)
 
 ## Getting Started
 
