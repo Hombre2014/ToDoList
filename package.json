@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Hombre2014/ToDoList#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",

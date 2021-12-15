@@ -81,5 +81,5 @@ function displayStored() {
   numberIndex = toDoItems.length;
 }
 
-module.exports = { addNewItem };
+module.exports = { addNewItem, context, fullList };
 export { addNewItem, context, displayStored };
