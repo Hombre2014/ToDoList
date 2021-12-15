@@ -28,7 +28,7 @@ body {
 
 .todo-item,
 .add-new {
-  min-height: 66px !important;
+  min-height: 66px;
 }
 
 .todo-item:last-of-type {
