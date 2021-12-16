@@ -55,7 +55,7 @@ const btnClear = () => {
   toDoDiv1.remove();
   toDoDiv2.remove();
   const clear = [];
-  clear[0] = document.querySelectorAll('.todo-item').length
+  clear[0] = document.querySelectorAll('.todo-item').length;
   // Remove the two checked items from the array
   toDoItems.splice(0);
   localStore.setItem('storedToDoList', toDoItems);

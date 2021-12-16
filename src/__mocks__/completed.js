@@ -20,4 +20,4 @@ const check = () => {
   return toDoItems[0].completed;
 };
 
-module.exports = { check, completedItem};
+module.exports = { check, completedItem };

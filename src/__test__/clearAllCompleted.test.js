@@ -2,7 +2,8 @@
  * @jest-environment jsdom
  */
 
-import { createCompleted, checkedItem, btnClear } from '..//__mocks__/clearAllCompleted.js';
+// eslint-disable-next-line import/named
+import { createCompleted, checkedItem, btnClear } from '../__mocks__/clearAllCompleted.js';
 import LocalStorageMock from '../__mocks__/status.js';
 
 const localStore = new LocalStorageMock();
