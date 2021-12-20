@@ -4,7 +4,7 @@ const localStore = new LocalStorageMock();
 const toDoItems = [];
 localStore.setItem('storedToDoList', []);
 
-const checkedItem = () => {
+export const checkedItem = () => {
   // Store two completed items
   const firstTask = { description: 'First', completed: true, index: 0 };
   toDoItems.push(firstTask);
@@ -18,7 +18,7 @@ const checkedItem = () => {
 const toDoDiv1 = document.createElement('div');
 const toDoDiv2 = document.createElement('div');
 
-const createCompleted = () => {
+export const createCompleted = () => {
   // Created two DOM items
   document.body.innerHTML = `
     <form class="add-new white-height">
@@ -50,7 +50,7 @@ const createCompleted = () => {
   return result;
 };
 
-const btnClear = () => {
+export const btnClear = () => {
   // Simulate clearAll button and remove the checked items from DOM
   toDoDiv1.remove();
   toDoDiv2.remove();
@@ -62,5 +62,3 @@ const btnClear = () => {
   clear[1] = toDoItems.length;
   return clear;
 };
-
-module.exports = { createCompleted, checkedItem, btnClear };

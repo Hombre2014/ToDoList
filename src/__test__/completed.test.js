@@ -1,5 +1,4 @@
 import LocalStorageMock from '../__mocks__/status.js';
-// eslint-disable-next-line import/named
 import { check, completedItem } from '../__mocks__/completed.js';
 
 describe('Simulate changing status', () => {
